@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import io from "socket.io-client";
 import Chat from "../Chat/Chat";
-const socket = io.connect("https://chat-app-abhi.herokuapp.com/");
+import './Login.css'
+const socket = io.connect("http://localhost:3001");
 function Login() {
   const [username, setUsername] = useState("");
   const [roomid, setroomid] = useState("");
@@ -13,11 +14,12 @@ function Login() {
     }
   };
   return (
-    <div>
+    <div id="login-box">
       {!showChat?
       (
         <>
-      <h2>Want to Establish a chat?</h2>
+      
+      <h2>Messenger</h2>
       <input
         type="text"
         placeholder="name"
